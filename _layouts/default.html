@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ page.title }}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="caelijah, {{ site.author }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="{{ site.baseurl }}/assets/js/toggleTheme.js" defer></script>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <!-- You MUST include jQuery 3.4+ before Fomantic -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.js"></script>
+</head>
+
+<body style="visibility: hidden;" class="no-js">
+  <script> document.body.classList.remove('no-js'); </script>
+    <div class="ui {{ site.container_width }} container">
+
+    {% if page.show_home_button %}
+    <a class="ui icon button" href="{{ site.baseurl }}/" data-tooltip="Home" data-position="bottom left">
+      <i class="home icon"></i>
+    </a>
+    {% endif %}
+
+    {% comment %}--- Built-in buttons (always rendered, right-to-left) ---{% endcomment %}
+    <a id="themeButton" class="ui right floated icon button" data-tooltip="Theme" data-position="bottom right">
+      <i class="moon icon"></i>
+      <i class="sun icon"></i>
+    </a>
+    {% if site.cv_pdf %}
+    <a class="ui right floated icon button" data-tooltip="{{ site.cv_label }}" data-position="bottom right"
+      href="{{ site.baseurl }}/{{ site.cv_pdf }}" target="_blank" aria-label="{{ site.cv_label }}">
+      <i class="file alternate icon"></i>
+    </a>
+    {% endif %}
+    {% if site.email %}
+    <a class="ui right floated icon button" data-tooltip="Email: {{ site.email }}" data-position="bottom right"
+      href="mailto:{{ site.email }}" target="_blank" aria-label="Email: {{ site.email }}">
+      <i class="envelope icon"></i>
+    </a>
+    {% endif %}
+    {% if site.github %}
+    <a class="ui right floated icon button" data-tooltip="GitHub: {{ site.github }}" data-position="bottom right"
+      href="https://github.com/{{ site.github }}/" target="_blank" aria-label="GitHub: {{ site.github }}">
+      <i class="github icon"></i>
+    </a>
+    {% endif %}
+    {% if site.linkedin %}
+    <a class="ui right floated icon button" data-tooltip="LinkedIn: {{ site.linkedin }}" data-position="bottom right"
+      href="https://www.linkedin.com/in/{{ site.linkedin }}/" target="_blank"
+      aria-label="LinkedIn: {{ site.linkedin }}">
+      <i class="linkedin icon"></i>
+    </a>
+    {% endif %}
+
+    {% comment %}--- Extra nav buttons from config ---{% endcomment %}
+    {% for btn in site.nav_buttons reversed %}
+    <a class="ui right floated icon button" data-tooltip="{{ btn.tooltip }}" data-position="bottom right"
+      href="{{ btn.url }}" target="_blank" aria-label="{{ btn.aria_label }}">
+      <i class="{{ btn.icon }} icon"></i>
+    </a>
+    {% endfor %}
+
+    {{ content }}
+
+  </div>
+  <footer class="ui vertical footer segment">
+    <section class="ui center aligned container" id="contact">
+      <div class="ui link horizontal list">
+        <a class="item" href="{{ site.baseurl }}/">
+          <i class="home icon"></i>
+          Home
+        </a>
+        {% if site.linkedin %}
+        <a class="item" href="https://www.linkedin.com/in/{{ site.linkedin }}/" target="_blank">
+          <i class="linkedin icon"></i>
+          LinkedIn
+        </a>
+        {% endif %}
+        {% if site.github %}
+        <a class="item" href="https://github.com/{{ site.github }}/" target="_blank">
+          <i class="github icon"></i>
+          GitHub
+        </a>
+        {% endif %}
+        {% if site.email %}
+        <a class="item" href="mailto:{{ site.email }}" target="_blank">
+          <i class="mail icon"></i>
+          Email
+        </a>
+        {% endif %}
+        {% if site.cv_pdf %}
+        <a class="item" href="{{ site.baseurl }}/{{ site.cv_pdf }}" target="_blank">
+          <i class="file alternate icon"></i>
+          {{ site.cv_label }}
+        </a>
+        {% endif %}
+        {% for link in site.footer_links %}
+        <a class="item" href="{{ link.url }}" target="_blank">
+          <i class="{{ link.icon }} icon"></i>
+          {{ link.label }}
+        </a>
+        {% endfor %}
+      </div>
+      <br>
+      <div class="ui horizontal small divided link list" style="margin-top: 0px;">
+        <div class="item">
+          &copy;
+          {{ site.copyright_start_year }}
+          {% if site.copyright_end_year %}
+          - {{ site.copyright_end_year }}
+          {% endif %}
+          {{ site.author }}
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script>
+    $('.menu .item').tab();
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('[data-tooltip]').forEach(function (tooltipElement) {
+        tooltipElement.removeAttribute('data-tooltip');
+      });
+    }
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ui.text.container {
+      flex-grow: 1;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+  </style>
+</body>
+
+</html>

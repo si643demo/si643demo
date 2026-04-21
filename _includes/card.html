@@ -1,0 +1,102 @@
+{% comment %}
+  Card include. Accepts a `card` hash from _data/sections.yml
+  and a `cards_per_row` variable from the layout.
+{% endcomment %}
+
+{% assign c = include.card %}
+{% assign is_simple_link = c.url and c.tags == nil and c.authors == nil %}
+
+{% assign is_fluid = false %}
+{% if include.cards_per_row == 'one' or include.cards_per_row == nil %}
+  {% assign is_fluid = true %}
+{% endif %}
+
+{% comment %} 
+  Filters to apply to markdown content:
+  1. target="_blank" for links
+  2. Inline styles to remove list margins
+{% endcomment %}
+{% capture processed_description %}
+  {{ c.description | markdownify 
+     | replace: '<a href=', '<a target="_blank" rel="noopener noreferrer" href='
+     | replace: '<ul>', '<ul style="margin-top: 0; margin-bottom: 0; margin-left:15px;">'
+     | replace: '<li>', '<li style="margin-bottom: 0;">' 
+  }}
+{% endcapture %}
+
+{% if is_simple_link %}
+<a class="ui {% if is_fluid %}fluid {% endif %}card" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">
+  <div class="content" style="flex-grow: 0;">
+    <span class="header">{{ c.title }}</span>
+  </div>
+  <div class="content">
+    <div class="description">
+      {{ processed_description }}
+    </div>
+  </div>
+</a>
+{% else %}
+<div class="ui {% if is_fluid %}fluid {% endif %}card">
+  <div class="content" style="flex-grow: 0;">
+    {% if c.url %}
+    <a class="header" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">{{ c.title }}</a>
+    {% else %}
+    <span class="header" style="margin-bottom:2.5px;">{{ c.title }}</span>
+    {% endif %}
+
+    {% if c.authors %}
+    {% for author in c.authors %}
+      {% if author.highlight %}
+    <span style="text-decoration: underline; text-underline-offset: 3px;">{{ author.name }}</span>
+      {% elsif author.url %}
+    <a href="{{ author.url }}" target="_blank" rel="noopener noreferrer">{{ author.name }}</a>
+      {% else %}
+    {{ author.name }}
+      {% endif %}
+      {% unless forloop.last %} and {% endunless %}
+    {% endfor %}
+    {% endif %}
+
+    {% if c.subtitle %}
+    <div class="card-subtitle">
+      {{ c.subtitle | markdownify | replace: '<a href=', '<a target="_blank" rel="noopener noreferrer" href=' }}
+    </div>
+    {% endif %}
+
+    {% if c.venue %}
+    <div>{{ c.venue }}</div>
+    {% endif %}
+  </div>
+
+  <div class="content">
+    <div class="description">
+      {{ processed_description }}
+    </div>
+  </div>
+
+  {% if c.tags %}
+  <div class="extra content">
+    {% for tag in c.tags %}
+      {% if tag.onclick %}
+    <button class="ui icon label" data-position="top left"
+      data-tooltip="{{ tag.tooltip }}" onclick="{{ tag.onclick }}">
+      {% if tag.icon %}<i class="{{ tag.icon }} icon"></i>{% endif %}
+      {{ tag.label }}
+    </button>
+      {% else %}
+    <a class="ui icon label" data-position="top left"
+      {% if tag.tooltip %}data-tooltip="{{ tag.tooltip }}"{% endif %}
+      href="{{ tag.url }}" target="_blank" rel="noopener noreferrer">
+      {% if tag.image %}
+      <img src="{{ site.baseurl }}/{{ tag.image }}" class="plucky" alt="{{ tag.label }}">
+      {% elsif tag.icon %}
+      <i class="{{ tag.icon }} icon"></i>
+      {% endif %}
+      {{ tag.label }}
+    </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}

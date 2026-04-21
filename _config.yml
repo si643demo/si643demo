@@ -1,0 +1,50 @@
+title: Elijah Cantu
+description: Elijah Cantu
+author: Elijah Cantu
+baseurl: "" #leave blank
+url: "https://elijahcantu.github.io" #update elijahcantu to be your github username.
+
+# Profile
+headshot: headshot.jpg
+bio: "I am a graduate student at the University of Michigan School of Information on a full-tuition scholarship. I earned my undergraduate degree in Computer Science at Michigan's College of Engineering on a full ride."
+
+# Social — just set usernames / email / filename; nav + footer buttons are generated automatically
+# for the following remove or leave blank to hide the corresponding nav/footer buttons
+github: elijahcantu #username (what comes after github.com/<username>)
+linkedin: elijahcantu #username (what comes after linkedin.com/in/<username>)
+email: caelijah@umich.edu
+cv_label: "Resume" # "CV" or "Resume" — used in nav button tooltip, aria-label, and footer link text
+cv_pdf: "example-resume.pdf" #filename of cv/resume, its best if you dont have spaces in the filename but if you do, make sure to include them here and in the actual filename in the root directory. This should be a PDF file.
+
+# Copyright
+copyright_start_year: 2026
+copyright_end_year:       # leave blank if same as start year or if you just want to show a single year
+
+container_width: "text" # Options: "text" (skinny), "wide" (wider), or leave blank for default width
+default_cards_per_row: "one" # this is the default cards per row for each section. Options: one, two, three, four. DO NOT USE NUMERICAL VALUES. For three you should use default 'container_width', for four you should use 'wide' 'container_width'. 
+
+# Additional nav buttons (beyond the built-in GitHub, LinkedIn, Email, CV, Theme)
+# Each entry: icon (Fomantic UI class without "icon"), tooltip, url, aria_label
+# you can find names of icons usable here: https://fomantic-ui.com/elements/icon.html
+
+# uncomment the following to add nav buttons
+# nav_buttons: 
+#  - icon: twitter
+#    tooltip: "Twitter: elijahcantu"
+#    url: "https://twitter.com/username/"
+#    aria_label: "Twitter: elijahcantu"
+#  - icon: instagram
+#    tooltip: "Instagram: username"
+#    url: "https://instagram.com/username/"
+#    aria_label: "Instagram: elijahcantu"
+
+
+# Additional footer links (beyond the built-in LinkedIn, GitHub, Email, CV)
+# Each entry: icon (Fomantic UI class without "icon"), label, url
+# You can find names of icons usable here: https://fomantic-ui.com/elements/icon.html
+
+# uncomment the following to add footer links
+# footer_links: 
+#  - label: Twitter
+#    icon: twitter
+#    url: "https://twitter.com/elijahcantu/"

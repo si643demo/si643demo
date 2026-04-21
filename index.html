@@ -1,0 +1,27 @@
+---
+layout: default
+title: Elijah Cantu
+---
+
+<header>
+  <h1>{{ site.author }}</h1>
+  <p>
+    <img class="ui left floated rounded small image" alt="{{ site.author }} headshot"
+      src="{{ site.baseurl }}/{{ site.headshot }}">
+    {{ site.bio }}
+</header>
+<div style="clear: both;"></div>
+
+{% for section in site.data.sections %}
+  <h2>{{ section.title }}</h2>
+  {% if section.intro %}<p>{{ section.intro }}</p>{% endif %}
+
+  {% comment %} Fallback logic: Use section.cards_per_row if exists, otherwise use site.default_cards_per_row {% endcomment %}
+  {% assign cards_per_row = section.cards_per_row | default: site.default_cards_per_row %}
+
+  <div class="ui {{ cards_per_row }} doubling stackable cards">
+    {% for card in section.cards %}
+      {% include card.html card=card cards_per_row=cards_per_row %}
+    {% endfor %}
+  </div>
+{% endfor %}

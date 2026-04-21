@@ -1,0 +1,143 @@
+- title: Projects
+  intro: "I develop software and tutorials to help people reduce their screen time."
+  cards:
+    - title: unplugs.org
+      description: "Provides tutorials on how to block any content on any device for yourself or your family."
+      tags: # these are optional buttons that appear in the card; you can include links, icons, or both. 
+        - label: Homepage
+          icon: home
+          url: "https://unplugs.org"
+          tooltip: "unplugs.org homepage"
+        - label: Screen Time
+          icon: fruit-apple
+          url: "https://unplugs.org/docs/apple/screen-time"
+          tooltip: "Apple parental controls"
+        - label: Cold Turkey
+          icon: "drumstick bite"
+          url: "https://unplugs.org/docs/macos/cold-turkey"
+          tooltip: "Website and application blocker for computers"
+    - title: unplugumich.org
+      url: "https://unplugumich.org" # optional: if you want the card to link to the project url when clicked
+      description: "Unplug UMich helps students manage screen time and build healthier digital habits."
+    - title: Google Search Web Filter
+      description: "Redirects your Google searches to the Web filter, which contains text-based links to websites."
+      tags:
+        - label: Try It
+          url: "https://www.google.com/search?q=kajol&udm=14"
+          tooltip: "Opens a Web filter Google search for Kajol"
+        - label: Chrome
+          icon: chrome
+          url: "https://chromewebstore.google.com/detail/google-search-web-filter/cnailmoibfjlnlnjedbgbjbononifola"
+          tooltip: "Available for Chrome"
+        - label: Firefox
+          icon: "firefox browser"
+          url: "https://addons.mozilla.org/en-US/firefox/addon/google-search-web-filter/"
+          tooltip: "Available for Firefox"
+    - title: Grayscaler
+      description: "Applies a grayscale filter to your included sites, tabs, or all sites, except those you excluded."
+      tags:
+        - label: Chrome
+          icon: chrome
+          url: "https://chromewebstore.google.com/detail/grayscaler/lobmgclijfljeodngchmpeafnodanohb"
+          tooltip: "Available for Chrome"
+
+- title: Publications
+  cards:
+    - title: "Webel: Web Browsing Event Logger"
+      authors:
+        - name: Elijah Cantu
+          highlight: true
+        - name: Gyunam Park
+          url: "https://www.gyunam.com"
+      venue: "ICPM 2025: International Conference on Process Mining 2025 Demo Track"
+      description: "A Chromium extension that logs web browsing events for process mining analysis, capturing navigation patterns."
+      tags:
+        - label: Paper
+          icon: file
+          url: "https://ceur-ws.org/Vol-4088/paper_252.pdf"
+          tooltip: "Published paper"
+        - label: Docs
+          icon: book
+          url: "https://webels.org"
+          tooltip: "Documentation"
+        - label: Demo
+          icon: video
+          url: "https://webels.org/demo"
+          tooltip: "Demo video"
+        - label: Install
+          icon: download
+          url: "https://chromewebstore.google.com/detail/webel-web-browsing-event/gebmgkicpohgdcchcgaiaeadnkmbkgap"
+          tooltip: "Install extension"
+        - label: GitHub
+          icon: github
+          url: "https://github.com/elijahcantu/webel"
+          tooltip: "GitHub repository"
+
+- title: Research Experience
+  cards:
+    - title: Mobile App Developer — Research Assistant
+      subtitle: "[University of Michigan School of Information](https://www.si.umich.edu) — 2025–Present"
+      description: |
+        - Developing a React Native mobile app for pediatric Type 1 Diabetes patients and caregivers  
+        - Architecting Firebase backend with real-time sync and intelligent discrepancy detection  
+        - Integrating Dexcom Share API with secure storage (iOS Keychain / Android Keystore)  
+        - Implementing role-based authentication with custom invite code system  
+        - Building Python Cloud Functions and Expo push notification infrastructure  
+        - Applying data deidentification protocols to protect patient health information  
+        - Mentored by [Yoon Jeong Cha](https://sites.google.com/umich.edu/yjcha) with guidance from Professors [Mark Newman](http://mwnewman.people.si.umich.edu/) and [Sun Young Park](https://sunyoungpark.weebly.com/)
+
+    - title: Beta Program Participant — Research Assistant
+      subtitle: "[Amazon Consumer Robotics](https://www.amazon.com/astro) — 2025–Present"
+      description: |
+        - Participating in beta testing of a household robot SDK  
+        - Developing interaction software using ROS and WebSockets  
+        - Contributing feedback on real-world deployment and system behavior  
+        - Working under the supervision of Professor [Patrícia Alves-Oliveira](https://patricialvesoliveira.com/)
+
+    - title: Research Assistant
+      subtitle: "[University of Michigan Robotics Department](https://robotics.umich.edu) — 2025–Present"
+      description: |
+        - Conducting longitudinal research on human–robot relationships in domestic settings  
+        - Analyzed ~2,000 Facebook posts from ~500 users over a 3-year period  
+        - Accessed Meta Content Library via SOMAR Virtual Data Enclave for secure data handling  
+        - Implemented strict deidentification protocols for user privacy  
+        - Applied mixed-methods analysis combining qualitative coding and quantitative modeling  
+
+    - title: Web Developer
+      subtitle: "[University of Michigan Robotics Department](https://robotics.umich.edu) — 2024–Present"
+      description: |
+        - Built and maintain research websites (Robot Studio, ROB 340, HRI Design Retreat)  
+        - Developed publication management tooling using Jekyll and GitHub Actions  
+        - Improved site performance and maintainability through automated workflows  
+
+    - title: Process Mining Researcher
+      subtitle: "[RWTH Aachen University](https://www.rwth-aachen.de) — 2025"
+      description: |
+        - Developed *Webel*, a Chromium-based browser extension for logging web navigation  
+        - Designed data collection pipelines for process mining analysis  
+        - Supported research on user behavior and workflow modeling  
+
+
+- title: International Experience
+  cards:
+    - title: RWTH Aachen University
+      subtitle: "Aachen, Germany — 2025"
+      description: "Process mining research and German language study."
+    - title: University of Michigan-Shanghai Jiao Tong University Joint Institute
+      subtitle: "Shanghai, China — 2025"
+      description: "Sustainability studies."
+    - title: CEA CAPA Prague
+      subtitle: "Prague, Czechia — 2023"
+      description: "Differential equations and Prague history."
+
+
+
+- title: Education
+  cards_per_row: one  #overrides default_cards_per_row in _config.yml for this section
+  cards:
+    - title: University of Michigan School of Information
+      subtitle: Master of Science in Information | 2025–2027
+      description: "Full-Tuition Award: UMSI Go Blue Graduate Scholarship"
+    - title: University of Michigan College of Engineering
+      subtitle: Bachelor of Science in Engineering in Computer Science | 2021–2025
+      description: "Minor: UX Design (UMSI). Full-Ride Award: Wolverine Pathways Scholarship + Detroit Promise Scholarship"

@@ -1,0 +1,48 @@
+.hidden {
+  display: none !important;
+}
+
+body.inverted, .tab.inverted {
+  color: white;
+  background: #1b1c1d;
+}
+.sticky.inverted{
+  background-color: #1b1c1d !important;
+}
+.ui.text.container{
+  padding-top: 16px;
+  padding-bottom:16px;
+}
+.plucky {
+  height: 12px !important;
+  width: 9px !important;
+  position: relative;
+  top: -2px;
+}
+
+
+.logo-dark,
+.logo-light{
+  margin-bottom:5px;
+}
+
+
+.ui.icon.label.margin {
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .ui.bottom.attached.tab.segment[data-tab="experience"] {
+    padding-top: 16px;
+  }
+
+  .ui.tiny.image {
+    margin-bottom: 5px;
+  }
+}
+
+.no-js {
+  visibility: visible !important;
+}
+
+
